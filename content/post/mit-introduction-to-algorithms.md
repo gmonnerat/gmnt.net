@@ -4,6 +4,7 @@ date = "2015-04-17T16:15:31+02:00"
 description = "Introduction to Algorithms"
 tags = ["algorithm"]
 title = "Introduction to Algorithms - MIT OpenCourseWare"
+author = "Gabriel Monnerat"
 
 +++
 
