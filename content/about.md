@@ -12,6 +12,6 @@ I&#39;m Gabriel Monnerat, a Brazilian software engineer living in Lille, France.
 Currently, I work at [Nexedi](http://www.nexedi.com) developing highly sophisticated
 business management system using [open source technologies](http://git.erp5.org/gitweb).
 
-Also, you can find me at [Twitter](http://www.twitter.com/gmonnerat) and [Github](http://www.github.com/gmonnerat).
+Also, you can find me at [Twitter](http://www.twitter.com/gmonnerat), [Github](http://www.github.com/gmonnerat) or [Reddit](http://www.reddit.com/user/gmonnerat/).
 
 Feel free to [contact me](mailto:contact@gmnt.net).
