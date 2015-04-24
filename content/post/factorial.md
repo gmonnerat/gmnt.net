@@ -12,24 +12,22 @@ example 100!, [int64](http://golang.org/pkg/builtin/#int64) is not enough.
 
 Then, I used [math/big](http://golang.org/pkg/math/big/) to calculate it.
 
-<pre><code>
-package main
+    package main
 
-import "fmt"
-import "math/big"
+    import "fmt"
+    import "math/big"
 
-func factorial(x *big.Int) *big.Int {
-  if x.Cmp(big.NewInt(0)) == 0 {
-    return big.NewInt(1)
-  }
-  return big.NewInt(0).Mul(x,
-    factorial(big.NewInt(0).Sub(x, big.NewInt(1))))
-}
+    func factorial(x *big.Int) *big.Int {
+      if x.Cmp(big.NewInt(0)) == 0 {
+        return big.NewInt(1)
+      }
+      return big.NewInt(0).Mul(x,
+        factorial(big.NewInt(0).Sub(x, big.NewInt(1))))
+    }
 
-func main() {
-  fmt.Println(factorial(big.NewInt(100)))
-}
-</code></pre>
+    func main() {
+      fmt.Println(factorial(big.NewInt(100)))
+    }
 
 The result to 100! is:
 9332621544394415268169923885626670049071596826438162146859296389521
