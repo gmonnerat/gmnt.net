@@ -8,6 +8,10 @@ title = "Calculating factorial in Go"
 +++
 
 Calculate factorial in Go is simple. But, when you have big numbers, for
+example 100!, int64 is not enough.
+<!--more-->
+
+Calculate factorial in Go is simple. But, when you have big numbers, for
 example 100!, [int64](http://golang.org/pkg/builtin/#int64) is not enough.
 
 Then, I used [math/big](http://golang.org/pkg/math/big/) to calculate it.
