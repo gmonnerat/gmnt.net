@@ -1,4 +1,18 @@
-baseurl = "http://gmnt.net/"
+baseurl = "http://gmnt.net"
 languageCode = "en-us"
-title = "Gabriel Monnerat"
-theme = "pixyll"
+title = "Gabriel's blog"
+theme = "hyde-x"
+pygmentsstyle = "emacs"
+
+[[menu.main]]
+    name = "About"
+    identifier = "about"
+    url = "/about/"
+
+[author]
+    name = "Gabriel Monnerat"
+
+[params]
+  tagline = "Random code and observations"
+  github = "https://github.com/gmonnerat"
+  twitter = "https://twitter.com/gmonnerat"
