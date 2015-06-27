@@ -1,7 +1,7 @@
 +++
 categories = []
 date = "2015-06-06T01:14:48+02:00"
-description = ""
+description = "One week without internet at home and I thought that this would be impossible and boring, but in one week I read more than my last 3 months."
 tags = ["books"]
 title = "One week without internet"
 
