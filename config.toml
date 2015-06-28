@@ -9,6 +9,11 @@ pygmentsstyle = "emacs"
     identifier = "about"
     url = "/about/"
 
+[[menu.main]]
+    name = "Subscribe"
+    identifier = "subscribe"
+    url = "/index.xml"
+
 [author]
     name = "Gabriel Monnerat"
 
