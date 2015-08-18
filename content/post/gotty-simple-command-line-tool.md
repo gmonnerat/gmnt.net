@@ -11,11 +11,12 @@ Today I saw a nice and easy to use command line tool, called [GoTTY](https://git
 
 I just did:
 
-  $ go get github.com/yudai/gotty
-  $ gotty -p 8081 -w mutt
+    $ go get github.com/yudai/gotty
+
+    $ gotty -p 8081 -w mutt
 
 Done. With this, I am able to use my favorite e-mail client, [mutt](http://www.mutt.org/), in the browser.
 
 For now, I used [Port Forwarding](https://support.ssh.com/manuals/server-admin/32/Port_Forwarding.html)
-because there is no authentication support yet. But, when/if added will be
+because there is no authentication support yet. But, when added will be
 interesting.
