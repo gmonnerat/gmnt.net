@@ -1,8 +1,8 @@
 +++
-categories = []
+categories = ["hugo", "blog"]
 date = "2015-06-28T23:46:37+02:00"
 description = "In Hugo, is possible add a link in your blog easily"
-keywords = []
+keywords = ["blog"]
 title = "Adding link to the blog"
 
 +++
