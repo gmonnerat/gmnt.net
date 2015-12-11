@@ -39,4 +39,6 @@ To access my applications, I add subdomains to the Caddyfile, for example:
       }
     }
 
+I have no reason to move from [Nginx](https://www.nginx.com/) to [Caddy](https://caddyserver.com/), except the feature of setup HTTPS easily with Caddy. I tried, it works, then no reason to go back.
+
 Congratulations to [Caddy](https://caddyserver.com/) and [Let&#39;s Encrypt](https://letsencrypt.org/) for the nice work!
