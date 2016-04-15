@@ -32,6 +32,6 @@ To avoid run go-bindata command every time, I use
 [goat](https://github.com/yosssi/goat) and to restart the server when
 there are changes, I use [fresh](https://github.com/pilu/fresh).
 
-OBS: This skeleton is not used production yet and there is no tests for it. So, please only use it to prototype new applications.
+OBS: It is still work-in-progress and not tested. So, please use it to prototype new applications only.
 
 Enjoy! Feel free to report issues.
