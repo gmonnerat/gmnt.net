@@ -7,10 +7,10 @@ title = "About"
 
 Hello!
 
-I&#39;m Gabriel Monnerat, a Brazilian software engineer living in Lille, France.
+I&#39;m Gabriel Monnerat, a Brazilian software engineer living in Rio de Janeiro, Brazil.
 
 Currently, I work at [Nexedi](http://www.nexedi.com) developing highly sophisticated
-business management system using [open source technologies](http://git.erp5.org/gitweb).
+business management system using [open source technologies](https://lab.nexedi.com/u/gabriel).
 
 Also, you can find me at [Twitter](http://www.twitter.com/gmonnerat), [Github](http://www.github.com/gmonnerat) or [Reddit](http://www.reddit.com/user/gmonnerat/).
 
