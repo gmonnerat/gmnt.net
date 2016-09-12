@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Gabriel&#39;s blog</title>
+    <link>//gmnt.net/post/</link>
+    <description>Recent content in Posts on Gabriel&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 21 Apr 2016 05:22:55 +0200</lastBuildDate>
+    <atom:link href="//gmnt.net/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Playing with history interface</title>
+      <link>//gmnt.net/post/playing-with-history-interface/</link>
+      <pubDate>Thu, 21 Apr 2016 05:22:55 +0200</pubDate>
+      
+      <guid>//gmnt.net/post/playing-with-history-interface/</guid>
+      <description>&lt;p&gt;I have been playing with &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/API/History&#34;&gt;History&lt;/a&gt; recently and I commit my sample &lt;a href=&#34;https://github.com/gmonnerat/history-api-sample&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;My goal was seeing how to navigate in the website without reload the page, like with &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onhashchange&#34;&gt;onhashchange&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The difference is, the page does not reload when you change the hash. But, with &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/API/History&#34;&gt;History&lt;/a&gt;, I used the &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/Events/click&#34;&gt;click&lt;/a&gt; event to get the same behaviour.&lt;/p&gt;
+
+&lt;p&gt;I still don&amp;rsquo;t know if using &lt;a href=&#34;ttps://developer.mozilla.org/en-US/docs/Web/Events/click&#34;&gt;click&lt;/a&gt; is good or not. But, until now, is working fine.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Skeleton to my web applications in Go</title>
+      <link>//gmnt.net/post/go-web-application-skeleton/</link>
+      <pubDate>Fri, 15 Apr 2016 00:38:21 +0200</pubDate>
+      
+      <guid>//gmnt.net/post/go-web-application-skeleton/</guid>
+      <description>&lt;p&gt;I just published my skeleton that I use to write Web Applications,
+&lt;a href=&#34;https://github.com/gmonnerat/go-web-application-skeleton&#34;&gt;go-web-application-skeleton&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Ever since I started to study &lt;a href=&#34;https://golang.org/&#34;&gt;Go&lt;/a&gt;, I was trying to create web applications in only one binary file.&lt;/p&gt;
+
+&lt;p&gt;And with &lt;a href=&#34;https://github.com/jteeuwen/go-bindata&#34;&gt;go-bindata&lt;/a&gt; it is possible.&lt;/p&gt;
+
+&lt;p&gt;I can send(or move) the binary to my server without problems:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ make build
+go-bindata static/... templates/...
+$ go build
+$ mv go-web-application-skeleton /tmp/
+$ cd /tmp/
+$ ./go-web-application-skeleton
+
+$ curl -i http://localhost:8080/static/favicon.ico | head -n 1
+    HTTP/1.1 200 OK
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;No access to the file system!&lt;/p&gt;
+
+&lt;p&gt;To avoid run go-bindata command every time, I use
+&lt;a href=&#34;https://github.com/yosssi/goat&#34;&gt;goat&lt;/a&gt; and to restart the server when
+there are changes, I use &lt;a href=&#34;https://github.com/pilu/fresh&#34;&gt;fresh&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;OBS: It is still work-in-progress and not tested. So, please use it to prototype new applications only.&lt;/p&gt;
+
+&lt;p&gt;Enjoy! Feel free to report issues.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Moving from Nginx to Caddy</title>
+      <link>//gmnt.net/post/moving-from-nginx-to-caddy/</link>
+      <pubDate>Fri, 11 Dec 2015 00:56:07 +0100</pubDate>
+      
+      <guid>//gmnt.net/post/moving-from-nginx-to-caddy/</guid>
+      <description>&lt;p&gt;After see the release of &lt;a href=&#34;https://caddyserver.com/blog/caddy-0_8-released&#34;&gt;Caddy 0.8 with Let&amp;#39;s Encrypt integration&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I installed Caddy downloading the package from this &lt;a href=&#34;https://caddyserver.com/download&#34;&gt;page&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;After download and extract the binary, I ran it with my initial &lt;a href=&#34;https://caddyserver.com/docs/caddyfile&#34;&gt;Caddyfile&lt;/a&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;gmnt.net, www.gmnt.net {
+  gzip
+  root /home/gabriel/gmnt.net/public 
+
+  log /home/gabriel/caddy/blog.log {
+    rotate {
+      size 100 # Rotate after 100 MB
+      age  14  # Keep log files for 14 days
+      keep 10  # Keep at most 10 log files
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I know that exists one extension to integrate &lt;a href=&#34;https://caddyserver.com/&#34;&gt;Caddy&lt;/a&gt; and &lt;a href=&#34;http://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;, but specifing the &lt;a href=&#34;https://caddyserver.com/docs/root&#34;&gt;root&lt;/a&gt; of the site is enough for me.&lt;/p&gt;
+
+&lt;p&gt;After run, automatically I got this blog running in HTTPS. _o/&lt;/p&gt;
+
+&lt;p&gt;To access my applications, I add subdomains to the Caddyfile, for example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;xyz.gmnt.net {
+  proxy / localhost:1234 {
+    proxy_header X-Real-IP {remote}
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I have no reason to move from &lt;a href=&#34;https://www.nginx.com/&#34;&gt;Nginx&lt;/a&gt; to &lt;a href=&#34;https://caddyserver.com/&#34;&gt;Caddy&lt;/a&gt;, except the feature of setup HTTPS easily with Caddy. I tried, it works, then no reason to go back.&lt;/p&gt;
+
+&lt;p&gt;Congratulations to &lt;a href=&#34;https://caddyserver.com/&#34;&gt;Caddy&lt;/a&gt; and &lt;a href=&#34;https://letsencrypt.org/&#34;&gt;Let&amp;#39;s Encrypt&lt;/a&gt; for the nice work!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Nice package to help debugging</title>
+      <link>//gmnt.net/post/nice-package-to-help-debugging/</link>
+      <pubDate>Fri, 27 Nov 2015 13:54:39 +0100</pubDate>
+      
+      <guid>//gmnt.net/post/nice-package-to-help-debugging/</guid>
+      <description>&lt;p&gt;I just found &lt;a href=&#34;https://github.com/maruel/panicparse&#34;&gt;panicparse&lt;/a&gt;, a nice package to help debugging crashes and deadlocks.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Intelligent State Handling</title>
+      <link>//gmnt.net/post/intelligent-state-handling/</link>
+      <pubDate>Wed, 11 Nov 2015 02:00:20 +0100</pubDate>
+      
+      <guid>//gmnt.net/post/intelligent-state-handling/</guid>
+      <description>&lt;p&gt;An interesting post about Hashbangs (#!) and hashes (#): &lt;a href=&#34;https://github.com/browserstate/history.js/wiki/Intelligent-State-Handling&#34;&gt;Intelligent State Handling&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Configuring DKIM</title>
+      <link>//gmnt.net/post/configuring-dkim/</link>
+      <pubDate>Wed, 04 Nov 2015 23:57:59 +0100</pubDate>
+      
+      <guid>//gmnt.net/post/configuring-dkim/</guid>
+      <description>&lt;p&gt;After reading the post &lt;a href=&#34;https://scaron.info/blog/debian-mail-spf-dkim.html&#34;&gt;Debian Mail Server, Part II: SPF and
+DKIM&lt;/a&gt;, I checked my mail
+server with &lt;a href=&#34;https://www.mail-tester.com/&#34;&gt;mail-tester.com&lt;/a&gt; and I got &lt;sup&gt;6&lt;/sup&gt;&amp;frasl;&lt;sub&gt;10&lt;/sub&gt;.
+With this score, my email can be consired as spam.&lt;/p&gt;
+
+&lt;p&gt;After configure DKIM and DMARC, I got &lt;sup&gt;10&lt;/sup&gt;&amp;frasl;&lt;sub&gt;10&lt;/sub&gt;.&lt;/p&gt;
+
+&lt;p&gt;Sending an empty e-mail to
+&lt;a href=&#34;mailto:check-auth@verifier.port25.com&#34;&gt;check-auth@verifier.port25.com&lt;/a&gt;, I got
+a SPF/DKIM report by mail that looks like:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;SPF check:          pass
+DomainKeys check:   neutral
+DKIM check:         pass
+Sender-ID check:    pass
+SpamAssassin check: ham
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Much better now.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Hosting my blog on Netlify</title>
+      <link>//gmnt.net/post/hosting-my-blog-on-netlify/</link>
+      <pubDate>Thu, 17 Sep 2015 01:45:43 +0200</pubDate>
+      
+      <guid>//gmnt.net/post/hosting-my-blog-on-netlify/</guid>
+      <description>&lt;p&gt;Checking the post &lt;a rel=&#34;in-reply-to&#34; href=&#34;https://www.netlify.com/blog/2015/07/30/hugo-on-netlify-insanely-fast-deploys&#34;&gt;Hosting Hugo on Netlify - Insanely Fast Deploys&lt;/a&gt;, I tried to host my blog on &lt;a href=&#34;https://www.netlify.com&#34;&gt;Netlify&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;It was really fast to deploy. Just some clicks and I got the instance.&lt;/p&gt;
+
+&lt;p&gt;Create an account was slower than deploy :).&lt;/p&gt;
+
+&lt;p&gt;I really enjoyed.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Marathon 2016</title>
+      <link>//gmnt.net/post/marathon-2016/</link>
+      <pubDate>Sat, 29 Aug 2015 14:23:23 +0200</pubDate>
+      
+      <guid>//gmnt.net/post/marathon-2016/</guid>
+      <description>&lt;p&gt;In reply to: &lt;a rel=&#34;in-reply-to&#34; href=&#34;http://www.ticketagora.com.br/Evento/2241/Rio+De+Janeiro+City+Marathon+2016.aspx?lang=en&#34;&gt;RIO DE JANEIRO CITY MARATHON 2016&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I subscribed to next marathon in Rio de Janeiro.&lt;/p&gt;
+
+&lt;p&gt;Now, I have 9 months to train and be ready.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Using mutt in the browser</title>
+      <link>//gmnt.net/post/gotty-simple-command-line-tool/</link>
+      <pubDate>Tue, 18 Aug 2015 03:55:44 +0200</pubDate>
+      
+      <guid>//gmnt.net/post/gotty-simple-command-line-tool/</guid>
+      <description>&lt;p&gt;Today I saw a nice and easy to use command line tool, called &lt;a href=&#34;https://github.com/yudai/gotty&#34;&gt;GoTTY&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I just did:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ go get github.com/yudai/gotty
+
+$ gotty -p 8081 -w mutt
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Done. With this, I am able to use my favorite e-mail client, &lt;a href=&#34;http://www.mutt.org/&#34;&gt;mutt&lt;/a&gt;, in the browser.&lt;/p&gt;
+
+&lt;p&gt;For now, I used &lt;a href=&#34;https://support.ssh.com/manuals/server-admin/32/Port_Forwarding.html&#34;&gt;Port Forwarding&lt;/a&gt;
+because there is no authentication support yet. But, when added will be
+interesting.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Adding link to the blog</title>
+      <link>//gmnt.net/post/adding-link-to-the-blog/</link>
+      <pubDate>Sun, 28 Jun 2015 23:46:37 +0200</pubDate>
+      
+      <guid>//gmnt.net/post/adding-link-to-the-blog/</guid>
+      <description>&lt;p&gt;In &lt;a href=&#34;http://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;, is possible add a link in your blog easily.&lt;/p&gt;
+
+&lt;p&gt;One option is add .Site.Menus.main to the theme.&lt;/p&gt;
+
+&lt;p&gt;In the theme &lt;a href=&#34;https://github.com/zyro/hyde-x&#34;&gt;Hyde-X&lt;/a&gt; is already done with those lines:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ range .Site.Menus.main }}
+&amp;lt;li class=&amp;quot;sidebar-nav-item&amp;quot;&amp;gt;&amp;lt;a href=&amp;quot;{{ .URL | absURL }}&amp;quot;&amp;gt;{{ .Name }}&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+{{end}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then, in my config.toml I added:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[[menu.main]]
+name = &amp;quot;Subscribe&amp;quot;
+identifier = &amp;quot;subscribe&amp;quot;
+url = &amp;quot;/index.xml&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Done! Nothing to change except my configuration file.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Sharing post - Its the future</title>
+      <link>//gmnt.net/post/its-the-future-post/</link>
+      <pubDate>Thu, 11 Jun 2015 10:07:57 +0200</pubDate>
+      
+      <guid>//gmnt.net/post/its-the-future-post/</guid>
+      <description>&lt;p&gt;Very interesting &lt;a href=&#34;http://blog.circleci.com/its-the-future/&#34;&gt;post/satire&lt;/a&gt; that makes
+me think how difficult is build simple applications nowadays.&lt;/p&gt;
+
+&lt;p&gt;We have a lot of good applications and tools, but to start something, maybe we don&amp;#39;t need.&lt;/p&gt;
+
+&lt;p&gt;Is a very good exercise for me try to create a simple application instead of build huge applications just for me.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>One week without internet</title>
+      <link>//gmnt.net/post/one-week-without-internet/</link>
+      <pubDate>Sat, 06 Jun 2015 01:14:48 +0200</pubDate>
+      
+      <guid>//gmnt.net/post/one-week-without-internet/</guid>
+      <description>&lt;p&gt;One week without internet at home and I thought that this would be impossible
+and boring, but in one week I read more than my last 3 months.&lt;/p&gt;
+
+&lt;p&gt;I finished &lt;a href=&#34;https://www.goodreads.com/book/show/18635622-a-knight-of-the-seven-kingdoms&#34;&gt;A Knight of the Seven Kingdoms&lt;/a&gt;. Really good.&lt;/p&gt;
+
+&lt;p&gt;And I started &lt;a href=&#34;http://www.amazon.fr/Thinking-Fast-Slow-Daniel-Kahneman-ebook/dp/B005MJFA2W/ref=tmm_kin_swatch_0?_encoding=UTF8&amp;amp;sr=8-1&amp;amp;qid=1433545661&#34;&gt;Thinking fast and slow&lt;/a&gt; and &lt;a href=&#34;http://www.amazon.fr/Pragmatic-Programmer-Journeyman-Master-ebook/dp/B003GCTQAE/ref=sr_1_1?s=digital-text&amp;amp;ie=UTF8&amp;amp;qid=1433546102&amp;amp;sr=1-1&amp;amp;keywords=the+pragmatic+programmer&#34;&gt;The Pragmatic Programmer: From Journeyman to Master&lt;/a&gt;. Both are good until now.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>strace is fantastic</title>
+      <link>//gmnt.net/post/strace-is-fantastic/</link>
+      <pubDate>Wed, 06 May 2015 22:24:02 +0200</pubDate>
+      
+      <guid>//gmnt.net/post/strace-is-fantastic/</guid>
+      <description>&lt;p&gt;From time to time, I have issues with some software that I cannot see errors in logs or when running manually, nothing happens. This is very hard to debug.&lt;/p&gt;
+
+&lt;p&gt;For example, rsync sleeping forever or Libreoffice daemon quitting without raise any exception.&lt;/p&gt;
+
+&lt;p&gt;To understand more, I use &lt;a href=&#34;http://linux.die.net/man/1/strace&#34;&gt;strace&lt;/a&gt;. Is an excellent tool.&lt;/p&gt;
+
+&lt;p&gt;It intercepts and records the system calls which are called by a process and the signals which are received by a process.&lt;/p&gt;
+
+&lt;pre&gt;
+$ strace sleep 10
+execve(&#34;/bin/sleep&#34;, [&#34;sleep&#34;, &#34;10&#34;], [/* 19 vars */]) = 0
+brk(0)                                  = 0x608000
+access(&#34;/etc/ld.so.nohwcap&#34;, F_OK)      = -1 ENOENT (No such file or directory)
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f5e461fc000
+access(&#34;/etc/ld.so.preload&#34;, R_OK)      = -1 ENOENT (No such file or directory)
+open(&#34;/etc/ld.so.cache&#34;, O_RDONLY)      = 3
+
+....
+
+nanosleep({10, 0}, NULL)                = 0
+close(1)                                = 0
+close(2)                                = 0
+exit_group(0)                           = ?
+&lt;/pre&gt;
+
+&lt;p&gt;You can also write the trace output to a file.&lt;/p&gt;
+
+&lt;pre&gt;
+$ strace -o output.txt ls
+&lt;/pre&gt;
+
+&lt;p&gt;Or intercept from a specific process.&lt;/p&gt;
+
+&lt;pre&gt;
+$ strace -p 1234
+&lt;/pre&gt;
+
+&lt;p&gt;Also, with &amp;lsquo;man strace&amp;rsquo; you can find all information to help you.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Calculating factorial in Go</title>
+      <link>//gmnt.net/post/factorial/</link>
+      <pubDate>Mon, 20 Apr 2015 23:46:06 +0200</pubDate>
+      
+      <guid>//gmnt.net/post/factorial/</guid>
+      <description>&lt;p&gt;Calculate factorial in Go is simple. But, when you have big numbers, for
+example 100!, int64 is not enough.&lt;/p&gt;
+
+&lt;p&gt;Calculate factorial in Go is simple. But, when you have big numbers, for
+example 100!, &lt;a href=&#34;http://golang.org/pkg/builtin/#int64&#34;&gt;int64&lt;/a&gt; is not enough.&lt;/p&gt;
+
+&lt;p&gt;Then, I used &lt;a href=&#34;http://golang.org/pkg/math/big/&#34;&gt;math/big&lt;/a&gt; to calculate it.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+import &amp;quot;math/big&amp;quot;
+
+func factorial(x *big.Int) *big.Int {
+  if x.Cmp(big.NewInt(0)) == 0 {
+    return big.NewInt(1)
+  }
+  return big.NewInt(0).Mul(x,
+    factorial(big.NewInt(0).Sub(x, big.NewInt(1))))
+}
+
+func main() {
+  fmt.Println(factorial(big.NewInt(100)))
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The result to 100! is:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;93326215443944152681699238856266700490715968264381621468592963895217599993229915608941463976156518286253697920827223758251185210916864000000000000000000000000
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This code is just an idea, probably can be simplified. Feel free to simplify
+and share with me :).&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>myenv</title>
+      <link>//gmnt.net/post/myenv/</link>
+      <pubDate>Sun, 19 Apr 2015 22:12:02 +0200</pubDate>
+      
+      <guid>//gmnt.net/post/myenv/</guid>
+      <description>&lt;p&gt;Since 2012, I switched from a Thinkpad laptop to Chromebook, to force me to write, use and understand more Web applications.&lt;/p&gt;
+
+&lt;p&gt;At home, I have Samsung Chromebook, that is slow when you are doing a lot things, and to work I&amp;#39;m using &lt;a href=&#34;http://shop.lenovo.com/us/en/laptops/lenovo/n-series/n20p/&#34;&gt;Lenovo N20p Chromebook&lt;/a&gt; that is quite good and enough for me.&lt;/p&gt;
+
+&lt;p&gt;In both laptops I use &lt;a href=&#34;https://github.com/dnschneid/crouton&#34;&gt;crouton&lt;/a&gt; with &lt;a href=&#34;https://www.debian.org/&#34;&gt;Debian&lt;/a&gt; that I develop locally when required and connect to my development environment through SSH.&lt;/p&gt;
+
+&lt;p&gt;In case of run a Linux software, as &lt;a href=&#34;http://www.gimp.org/&#34;&gt;GIMP&lt;/a&gt; or &lt;a href=&#34;https://www.libreoffice.org/&#34;&gt;LibreOffice&lt;/a&gt;, I use &lt;a href=&#34;http://i3wm.org/&#34;&gt;i3&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

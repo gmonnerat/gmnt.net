@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Http on Gabriel&#39;s blog</title>
+    <link>//gmnt.net/categories/http/</link>
+    <description>Recent content in Http on Gabriel&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 Dec 2015 00:56:07 +0100</lastBuildDate>
+    <atom:link href="//gmnt.net/categories/http/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Moving from Nginx to Caddy</title>
+      <link>//gmnt.net/post/moving-from-nginx-to-caddy/</link>
+      <pubDate>Fri, 11 Dec 2015 00:56:07 +0100</pubDate>
+      
+      <guid>//gmnt.net/post/moving-from-nginx-to-caddy/</guid>
+      <description>&lt;p&gt;After see the release of &lt;a href=&#34;https://caddyserver.com/blog/caddy-0_8-released&#34;&gt;Caddy 0.8 with Let&amp;#39;s Encrypt integration&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I installed Caddy downloading the package from this &lt;a href=&#34;https://caddyserver.com/download&#34;&gt;page&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;After download and extract the binary, I ran it with my initial &lt;a href=&#34;https://caddyserver.com/docs/caddyfile&#34;&gt;Caddyfile&lt;/a&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;gmnt.net, www.gmnt.net {
+  gzip
+  root /home/gabriel/gmnt.net/public 
+
+  log /home/gabriel/caddy/blog.log {
+    rotate {
+      size 100 # Rotate after 100 MB
+      age  14  # Keep log files for 14 days
+      keep 10  # Keep at most 10 log files
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I know that exists one extension to integrate &lt;a href=&#34;https://caddyserver.com/&#34;&gt;Caddy&lt;/a&gt; and &lt;a href=&#34;http://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;, but specifing the &lt;a href=&#34;https://caddyserver.com/docs/root&#34;&gt;root&lt;/a&gt; of the site is enough for me.&lt;/p&gt;
+
+&lt;p&gt;After run, automatically I got this blog running in HTTPS. _o/&lt;/p&gt;
+
+&lt;p&gt;To access my applications, I add subdomains to the Caddyfile, for example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;xyz.gmnt.net {
+  proxy / localhost:1234 {
+    proxy_header X-Real-IP {remote}
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I have no reason to move from &lt;a href=&#34;https://www.nginx.com/&#34;&gt;Nginx&lt;/a&gt; to &lt;a href=&#34;https://caddyserver.com/&#34;&gt;Caddy&lt;/a&gt;, except the feature of setup HTTPS easily with Caddy. I tried, it works, then no reason to go back.&lt;/p&gt;
+
+&lt;p&gt;Congratulations to &lt;a href=&#34;https://caddyserver.com/&#34;&gt;Caddy&lt;/a&gt; and &lt;a href=&#34;https://letsencrypt.org/&#34;&gt;Let&amp;#39;s Encrypt&lt;/a&gt; for the nice work!&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

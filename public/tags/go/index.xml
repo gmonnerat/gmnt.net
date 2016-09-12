@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Go on Gabriel&#39;s blog</title>
+    <link>//gmnt.net/tags/go/</link>
+    <description>Recent content in Go on Gabriel&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 20 Apr 2015 23:46:06 +0200</lastBuildDate>
+    <atom:link href="//gmnt.net/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Calculating factorial in Go</title>
+      <link>//gmnt.net/post/factorial/</link>
+      <pubDate>Mon, 20 Apr 2015 23:46:06 +0200</pubDate>
+      
+      <guid>//gmnt.net/post/factorial/</guid>
+      <description>&lt;p&gt;Calculate factorial in Go is simple. But, when you have big numbers, for
+example 100!, int64 is not enough.&lt;/p&gt;
+
+&lt;p&gt;Calculate factorial in Go is simple. But, when you have big numbers, for
+example 100!, &lt;a href=&#34;http://golang.org/pkg/builtin/#int64&#34;&gt;int64&lt;/a&gt; is not enough.&lt;/p&gt;
+
+&lt;p&gt;Then, I used &lt;a href=&#34;http://golang.org/pkg/math/big/&#34;&gt;math/big&lt;/a&gt; to calculate it.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+import &amp;quot;math/big&amp;quot;
+
+func factorial(x *big.Int) *big.Int {
+  if x.Cmp(big.NewInt(0)) == 0 {
+    return big.NewInt(1)
+  }
+  return big.NewInt(0).Mul(x,
+    factorial(big.NewInt(0).Sub(x, big.NewInt(1))))
+}
+
+func main() {
+  fmt.Println(factorial(big.NewInt(100)))
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The result to 100! is:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;93326215443944152681699238856266700490715968264381621468592963895217599993229915608941463976156518286253697920827223758251185210916864000000000000000000000000
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This code is just an idea, probably can be simplified. Feel free to simplify
+and share with me :).&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

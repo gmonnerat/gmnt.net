@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on Gabriel&#39;s blog</title>
+    <link>//gmnt.net/tags/linux/</link>
+    <description>Recent content in Linux on Gabriel&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 06 May 2015 22:24:02 +0200</lastBuildDate>
+    <atom:link href="//gmnt.net/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>strace is fantastic</title>
+      <link>//gmnt.net/post/strace-is-fantastic/</link>
+      <pubDate>Wed, 06 May 2015 22:24:02 +0200</pubDate>
+      
+      <guid>//gmnt.net/post/strace-is-fantastic/</guid>
+      <description>&lt;p&gt;From time to time, I have issues with some software that I cannot see errors in logs or when running manually, nothing happens. This is very hard to debug.&lt;/p&gt;
+
+&lt;p&gt;For example, rsync sleeping forever or Libreoffice daemon quitting without raise any exception.&lt;/p&gt;
+
+&lt;p&gt;To understand more, I use &lt;a href=&#34;http://linux.die.net/man/1/strace&#34;&gt;strace&lt;/a&gt;. Is an excellent tool.&lt;/p&gt;
+
+&lt;p&gt;It intercepts and records the system calls which are called by a process and the signals which are received by a process.&lt;/p&gt;
+
+&lt;pre&gt;
+$ strace sleep 10
+execve(&#34;/bin/sleep&#34;, [&#34;sleep&#34;, &#34;10&#34;], [/* 19 vars */]) = 0
+brk(0)                                  = 0x608000
+access(&#34;/etc/ld.so.nohwcap&#34;, F_OK)      = -1 ENOENT (No such file or directory)
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f5e461fc000
+access(&#34;/etc/ld.so.preload&#34;, R_OK)      = -1 ENOENT (No such file or directory)
+open(&#34;/etc/ld.so.cache&#34;, O_RDONLY)      = 3
+
+....
+
+nanosleep({10, 0}, NULL)                = 0
+close(1)                                = 0
+close(2)                                = 0
+exit_group(0)                           = ?
+&lt;/pre&gt;
+
+&lt;p&gt;You can also write the trace output to a file.&lt;/p&gt;
+
+&lt;pre&gt;
+$ strace -o output.txt ls
+&lt;/pre&gt;
+
+&lt;p&gt;Or intercept from a specific process.&lt;/p&gt;
+
+&lt;pre&gt;
+$ strace -p 1234
+&lt;/pre&gt;
+
+&lt;p&gt;Also, with &amp;lsquo;man strace&amp;rsquo; you can find all information to help you.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

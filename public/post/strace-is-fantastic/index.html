@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>strace is fantastic &middot; Gabriel Monnerat</title>
+
+  
+  <link rel="stylesheet" href="//gmnt.net//css/poole.css">
+  <link rel="stylesheet" href="//gmnt.net//css/hyde.css">
+  <link rel="stylesheet" href="//gmnt.net//css/poole-overrides.css">
+  <link rel="stylesheet" href="//gmnt.net//css/hyde-overrides.css">
+  <link rel="stylesheet" href="//gmnt.net//css/hyde-x.css">
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+  
+  <link href="/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="Use strace to help you to debug">
+  <meta name="keywords" content="">
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      
+      <h1>Gabriel Monnerat</h1>
+      <p class="lead">Random code and observations</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="//gmnt.net//">Blog</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/about/">About</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/index.xml">Subscribe</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a rel="me" href="https://github.com/gmonnerat"><i class="fa fa-github-square fa-3x"></i></a>
+      
+      
+      
+      
+      <a rel="me" href="https://twitter.com/gmonnerat"><i class="fa fa-twitter-square fa-3x"></i></a>
+      </li>
+    </ul>
+
+    <p>Copyright &copy; 2016<br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1>strace is fantastic</h1>
+    <span class="post-date">May 6, 2015 &middot; 1 minute read
+    
+    <br/>
+    
+    
+    </span>
+    <p>From time to time, I have issues with some software that I cannot see errors in logs or when running manually, nothing happens. This is very hard to debug.</p>
+
+<p>For example, rsync sleeping forever or Libreoffice daemon quitting without raise any exception.</p>
+
+<p>To understand more, I use <a href="http://linux.die.net/man/1/strace">strace</a>. Is an excellent tool.</p>
+
+<p>It intercepts and records the system calls which are called by a process and the signals which are received by a process.</p>
+
+<pre>
+$ strace sleep 10
+execve("/bin/sleep", ["sleep", "10"], [/* 19 vars */]) = 0
+brk(0)                                  = 0x608000
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f5e461fc000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+open("/etc/ld.so.cache", O_RDONLY)      = 3
+
+....
+
+nanosleep({10, 0}, NULL)                = 0
+close(1)                                = 0
+close(2)                                = 0
+exit_group(0)                           = ?
+</pre>
+
+<p>You can also write the trace output to a file.</p>
+
+<pre>
+$ strace -o output.txt ls
+</pre>
+
+<p>Or intercept from a specific process.</p>
+
+<pre>
+$ strace -p 1234
+</pre>
+
+<p>Also, with &lsquo;man strace&rsquo; you can find all information to help you.</p>
+
+  </div>
+  
+</div>
+
+
+
+
+
+
+<script>
+  var _gaq=[['_setAccount','UA-67846887-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+</body>
+</html>

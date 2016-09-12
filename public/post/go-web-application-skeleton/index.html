@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Skeleton to my web applications in Go &middot; Gabriel Monnerat</title>
+
+  
+  <link rel="stylesheet" href="//gmnt.net//css/poole.css">
+  <link rel="stylesheet" href="//gmnt.net//css/hyde.css">
+  <link rel="stylesheet" href="//gmnt.net//css/poole-overrides.css">
+  <link rel="stylesheet" href="//gmnt.net//css/hyde-overrides.css">
+  <link rel="stylesheet" href="//gmnt.net//css/hyde-x.css">
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+  
+  <link href="/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="My skeleton to write web applications with Golang">
+  <meta name="keywords" content="go,web">
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      
+      <h1>Gabriel Monnerat</h1>
+      <p class="lead">Random code and observations</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="//gmnt.net//">Blog</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/about/">About</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/index.xml">Subscribe</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a rel="me" href="https://github.com/gmonnerat"><i class="fa fa-github-square fa-3x"></i></a>
+      
+      
+      
+      
+      <a rel="me" href="https://twitter.com/gmonnerat"><i class="fa fa-twitter-square fa-3x"></i></a>
+      </li>
+    </ul>
+
+    <p>Copyright &copy; 2016<br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1>Skeleton to my web applications in Go</h1>
+    <span class="post-date">Apr 15, 2016 &middot; 1 minute read
+    
+    <br/>
+    
+    <a class="label" href="//gmnt.net//categories/go">go</a><a class="label" href="//gmnt.net//categories/web">web</a>
+    </span>
+    <p>I just published my skeleton that I use to write Web Applications,
+<a href="https://github.com/gmonnerat/go-web-application-skeleton">go-web-application-skeleton</a>.</p>
+
+<p>Ever since I started to study <a href="https://golang.org/">Go</a>, I was trying to create web applications in only one binary file.</p>
+
+<p>And with <a href="https://github.com/jteeuwen/go-bindata">go-bindata</a> it is possible.</p>
+
+<p>I can send(or move) the binary to my server without problems:</p>
+
+<pre><code>$ make build
+go-bindata static/... templates/...
+$ go build
+$ mv go-web-application-skeleton /tmp/
+$ cd /tmp/
+$ ./go-web-application-skeleton
+
+$ curl -i http://localhost:8080/static/favicon.ico | head -n 1
+    HTTP/1.1 200 OK
+</code></pre>
+
+<p>No access to the file system!</p>
+
+<p>To avoid run go-bindata command every time, I use
+<a href="https://github.com/yosssi/goat">goat</a> and to restart the server when
+there are changes, I use <a href="https://github.com/pilu/fresh">fresh</a>.</p>
+
+<p>OBS: It is still work-in-progress and not tested. So, please use it to prototype new applications only.</p>
+
+<p>Enjoy! Feel free to report issues.</p>
+
+  </div>
+  
+</div>
+
+
+
+
+
+
+<script>
+  var _gaq=[['_setAccount','UA-67846887-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+</body>
+</html>

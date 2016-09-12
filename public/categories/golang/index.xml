@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Golang on Gabriel&#39;s blog</title>
+    <link>//gmnt.net/categories/golang/</link>
+    <description>Recent content in Golang on Gabriel&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 27 Nov 2015 13:54:39 +0100</lastBuildDate>
+    <atom:link href="//gmnt.net/categories/golang/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Nice package to help debugging</title>
+      <link>//gmnt.net/post/nice-package-to-help-debugging/</link>
+      <pubDate>Fri, 27 Nov 2015 13:54:39 +0100</pubDate>
+      
+      <guid>//gmnt.net/post/nice-package-to-help-debugging/</guid>
+      <description>&lt;p&gt;I just found &lt;a href=&#34;https://github.com/maruel/panicparse&#34;&gt;panicparse&lt;/a&gt;, a nice package to help debugging crashes and deadlocks.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Moving from Nginx to Caddy &middot; Gabriel Monnerat</title>
+
+  
+  <link rel="stylesheet" href="//gmnt.net//css/poole.css">
+  <link rel="stylesheet" href="//gmnt.net//css/hyde.css">
+  <link rel="stylesheet" href="//gmnt.net//css/poole-overrides.css">
+  <link rel="stylesheet" href="//gmnt.net//css/hyde-overrides.css">
+  <link rel="stylesheet" href="//gmnt.net//css/hyde-x.css">
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+  
+  <link href="/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="Moving from Nginx to Caddy with HTTPS">
+  <meta name="keywords" content="nginx,caddy">
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      
+      <h1>Gabriel Monnerat</h1>
+      <p class="lead">Random code and observations</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="//gmnt.net//">Blog</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/about/">About</a></li>
+      
+      <li class="sidebar-nav-item"><a href="/index.xml">Subscribe</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a rel="me" href="https://github.com/gmonnerat"><i class="fa fa-github-square fa-3x"></i></a>
+      
+      
+      
+      
+      <a rel="me" href="https://twitter.com/gmonnerat"><i class="fa fa-twitter-square fa-3x"></i></a>
+      </li>
+    </ul>
+
+    <p>Copyright &copy; 2016<br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1>Moving from Nginx to Caddy</h1>
+    <span class="post-date">Dec 11, 2015 &middot; 1 minute read
+    
+    <br/>
+    
+    <a class="label" href="//gmnt.net//categories/http">http</a><a class="label" href="//gmnt.net//categories/web">web</a>
+    </span>
+    <p>After see the release of <a href="https://caddyserver.com/blog/caddy-0_8-released">Caddy 0.8 with Let&#39;s Encrypt integration</a>.</p>
+
+<p>I installed Caddy downloading the package from this <a href="https://caddyserver.com/download">page</a>.</p>
+
+<p>After download and extract the binary, I ran it with my initial <a href="https://caddyserver.com/docs/caddyfile">Caddyfile</a>:</p>
+
+<pre><code>gmnt.net, www.gmnt.net {
+  gzip
+  root /home/gabriel/gmnt.net/public 
+
+  log /home/gabriel/caddy/blog.log {
+    rotate {
+      size 100 # Rotate after 100 MB
+      age  14  # Keep log files for 14 days
+      keep 10  # Keep at most 10 log files
+    }
+  }
+}
+</code></pre>
+
+<p>I know that exists one extension to integrate <a href="https://caddyserver.com/">Caddy</a> and <a href="http://gohugo.io/">Hugo</a>, but specifing the <a href="https://caddyserver.com/docs/root">root</a> of the site is enough for me.</p>
+
+<p>After run, automatically I got this blog running in HTTPS. _o/</p>
+
+<p>To access my applications, I add subdomains to the Caddyfile, for example:</p>
+
+<pre><code>xyz.gmnt.net {
+  proxy / localhost:1234 {
+    proxy_header X-Real-IP {remote}
+  }
+}
+</code></pre>
+
+<p>I have no reason to move from <a href="https://www.nginx.com/">Nginx</a> to <a href="https://caddyserver.com/">Caddy</a>, except the feature of setup HTTPS easily with Caddy. I tried, it works, then no reason to go back.</p>
+
+<p>Congratulations to <a href="https://caddyserver.com/">Caddy</a> and <a href="https://letsencrypt.org/">Let&#39;s Encrypt</a> for the nice work!</p>
+
+  </div>
+  
+</div>
+
+
+
+
+
+
+<script>
+  var _gaq=[['_setAccount','UA-67846887-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+</body>
+</html>
