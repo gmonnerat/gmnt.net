@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Go on Gabriel&#39;s blog</title>
-    <link>//gmnt.net/categories/go/</link>
-    <description>Recent content in Go on Gabriel&#39;s blog</description>
+    <title>Gabriel&#39;s blog</title>
+    <link>//gmonnerat.github.io/public/categories/go/index.xml</link>
+    <description>Recent content on Gabriel&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 15 Apr 2016 00:38:21 +0200</lastBuildDate>
-    <atom:link href="//gmnt.net/categories/go/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//gmonnerat.github.io/public/categories/go/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Skeleton to my web applications in Go</title>
-      <link>//gmnt.net/post/go-web-application-skeleton/</link>
+      <link>//gmonnerat.github.io/public/post/go-web-application-skeleton/</link>
       <pubDate>Fri, 15 Apr 2016 00:38:21 +0200</pubDate>
       
-      <guid>//gmnt.net/post/go-web-application-skeleton/</guid>
+      <guid>//gmonnerat.github.io/public/post/go-web-application-skeleton/</guid>
       <description>&lt;p&gt;I just published my skeleton that I use to write Web Applications,
 &lt;a href=&#34;https://github.com/gmonnerat/go-web-application-skeleton&#34;&gt;go-web-application-skeleton&lt;/a&gt;.&lt;/p&gt;
 

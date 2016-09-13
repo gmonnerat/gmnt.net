@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Env on Gabriel&#39;s blog</title>
-    <link>//gmnt.net/tags/env/</link>
-    <description>Recent content in Env on Gabriel&#39;s blog</description>
+    <title>Gabriel&#39;s blog</title>
+    <link>//gmonnerat.github.io/public/tags/env/index.xml</link>
+    <description>Recent content on Gabriel&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 19 Apr 2015 22:12:02 +0200</lastBuildDate>
-    <atom:link href="//gmnt.net/tags/env/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//gmonnerat.github.io/public/tags/env/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>myenv</title>
-      <link>//gmnt.net/post/myenv/</link>
+      <link>//gmonnerat.github.io/public/post/myenv/</link>
       <pubDate>Sun, 19 Apr 2015 22:12:02 +0200</pubDate>
       
-      <guid>//gmnt.net/post/myenv/</guid>
+      <guid>//gmonnerat.github.io/public/post/myenv/</guid>
       <description>&lt;p&gt;Since 2012, I switched from a Thinkpad laptop to Chromebook, to force me to write, use and understand more Web applications.&lt;/p&gt;
 
 &lt;p&gt;At home, I have Samsung Chromebook, that is slow when you are doing a lot things, and to work I&amp;#39;m using &lt;a href=&#34;http://shop.lenovo.com/us/en/laptops/lenovo/n-series/n20p/&#34;&gt;Lenovo N20p Chromebook&lt;/a&gt; that is quite good and enough for me.&lt;/p&gt;

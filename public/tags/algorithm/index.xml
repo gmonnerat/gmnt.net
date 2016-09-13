@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Algorithm on Gabriel&#39;s blog</title>
-    <link>//gmnt.net/tags/algorithm/</link>
-    <description>Recent content in Algorithm on Gabriel&#39;s blog</description>
+    <title>Gabriel&#39;s blog</title>
+    <link>//gmonnerat.github.io/public/tags/algorithm/index.xml</link>
+    <description>Recent content on Gabriel&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 17 Apr 2015 16:15:31 +0200</lastBuildDate>
-    <atom:link href="//gmnt.net/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//gmonnerat.github.io/public/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Introduction to Algorithms - MIT OpenCourseWare</title>
-      <link>//gmnt.net/post/mit-introduction-to-algorithms/</link>
+      <link>//gmonnerat.github.io/public/post/mit-introduction-to-algorithms/</link>
       <pubDate>Fri, 17 Apr 2015 16:15:31 +0200</pubDate>
       
-      <guid>//gmnt.net/post/mit-introduction-to-algorithms/</guid>
+      <guid>//gmonnerat.github.io/public/post/mit-introduction-to-algorithms/</guid>
       <description>&lt;p&gt;I found interesting videos in &lt;a href=&#34;http://hackr.io/tutorials/data-structures-algorithms&#34;&gt;Hackr.io&lt;/a&gt; about Algorithms provided by MIT. The list
 of videos are &lt;a href=&#34;http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-046j-introduction-to-algorithms-sma-5503-fall-2005/video-lectures/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 </description>

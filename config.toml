@@ -1,4 +1,4 @@
-baseurl = "http://gmnt.net"
+baseurl = "//gmonnerat.github.io/public"
 languageCode = "en-us"
 title = "Gabriel's blog"
 theme = "hyde-x"

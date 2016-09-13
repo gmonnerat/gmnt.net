@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Http on Gabriel&#39;s blog</title>
-    <link>//gmnt.net/categories/http/</link>
-    <description>Recent content in Http on Gabriel&#39;s blog</description>
+    <title>Gabriel&#39;s blog</title>
+    <link>//gmonnerat.github.io/public/categories/http/index.xml</link>
+    <description>Recent content on Gabriel&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 11 Dec 2015 00:56:07 +0100</lastBuildDate>
-    <atom:link href="//gmnt.net/categories/http/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//gmonnerat.github.io/public/categories/http/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Moving from Nginx to Caddy</title>
-      <link>//gmnt.net/post/moving-from-nginx-to-caddy/</link>
+      <link>//gmonnerat.github.io/public/post/moving-from-nginx-to-caddy/</link>
       <pubDate>Fri, 11 Dec 2015 00:56:07 +0100</pubDate>
       
-      <guid>//gmnt.net/post/moving-from-nginx-to-caddy/</guid>
+      <guid>//gmonnerat.github.io/public/post/moving-from-nginx-to-caddy/</guid>
       <description>&lt;p&gt;After see the release of &lt;a href=&#34;https://caddyserver.com/blog/caddy-0_8-released&#34;&gt;Caddy 0.8 with Let&amp;#39;s Encrypt integration&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;I installed Caddy downloading the package from this &lt;a href=&#34;https://caddyserver.com/download&#34;&gt;page&lt;/a&gt;.&lt;/p&gt;

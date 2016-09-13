@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Mutt on Gabriel&#39;s blog</title>
-    <link>//gmnt.net/categories/mutt/</link>
-    <description>Recent content in Mutt on Gabriel&#39;s blog</description>
+    <title>Gabriel&#39;s blog</title>
+    <link>//gmonnerat.github.io/public/categories/mutt/index.xml</link>
+    <description>Recent content on Gabriel&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 18 Aug 2015 03:55:44 +0200</lastBuildDate>
-    <atom:link href="//gmnt.net/categories/mutt/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//gmonnerat.github.io/public/categories/mutt/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Using mutt in the browser</title>
-      <link>//gmnt.net/post/gotty-simple-command-line-tool/</link>
+      <link>//gmonnerat.github.io/public/post/gotty-simple-command-line-tool/</link>
       <pubDate>Tue, 18 Aug 2015 03:55:44 +0200</pubDate>
       
-      <guid>//gmnt.net/post/gotty-simple-command-line-tool/</guid>
+      <guid>//gmonnerat.github.io/public/post/gotty-simple-command-line-tool/</guid>
       <description>&lt;p&gt;Today I saw a nice and easy to use command line tool, called &lt;a href=&#34;https://github.com/yudai/gotty&#34;&gt;GoTTY&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;I just did:&lt;/p&gt;

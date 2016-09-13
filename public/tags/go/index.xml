@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Go on Gabriel&#39;s blog</title>
-    <link>//gmnt.net/tags/go/</link>
-    <description>Recent content in Go on Gabriel&#39;s blog</description>
+    <title>Gabriel&#39;s blog</title>
+    <link>//gmonnerat.github.io/public/tags/go/index.xml</link>
+    <description>Recent content on Gabriel&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 20 Apr 2015 23:46:06 +0200</lastBuildDate>
-    <atom:link href="//gmnt.net/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//gmonnerat.github.io/public/tags/go/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Calculating factorial in Go</title>
-      <link>//gmnt.net/post/factorial/</link>
+      <link>//gmonnerat.github.io/public/post/factorial/</link>
       <pubDate>Mon, 20 Apr 2015 23:46:06 +0200</pubDate>
       
-      <guid>//gmnt.net/post/factorial/</guid>
+      <guid>//gmonnerat.github.io/public/post/factorial/</guid>
       <description>&lt;p&gt;Calculate factorial in Go is simple. But, when you have big numbers, for
-example 100!, int64 is not enough.&lt;/p&gt;
+example 100!, int64 is not enough.
+&lt;/p&gt;
 
 &lt;p&gt;Calculate factorial in Go is simple. But, when you have big numbers, for
 example 100!, &lt;a href=&#34;http://golang.org/pkg/builtin/#int64&#34;&gt;int64&lt;/a&gt; is not enough.&lt;/p&gt;
@@ -47,8 +47,7 @@ func main() {
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;This code is just an idea, probably can be simplified. Feel free to simplify
-and share with me :).&lt;/p&gt;
-</description>
+and share with me :).&lt;/p&gt;</description>
     </item>
     
   </channel>

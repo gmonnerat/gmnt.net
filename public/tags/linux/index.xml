@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Linux on Gabriel&#39;s blog</title>
-    <link>//gmnt.net/tags/linux/</link>
-    <description>Recent content in Linux on Gabriel&#39;s blog</description>
+    <title>Gabriel&#39;s blog</title>
+    <link>//gmonnerat.github.io/public/tags/linux/index.xml</link>
+    <description>Recent content on Gabriel&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 06 May 2015 22:24:02 +0200</lastBuildDate>
-    <atom:link href="//gmnt.net/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//gmonnerat.github.io/public/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>strace is fantastic</title>
-      <link>//gmnt.net/post/strace-is-fantastic/</link>
+      <link>//gmonnerat.github.io/public/post/strace-is-fantastic/</link>
       <pubDate>Wed, 06 May 2015 22:24:02 +0200</pubDate>
       
-      <guid>//gmnt.net/post/strace-is-fantastic/</guid>
+      <guid>//gmonnerat.github.io/public/post/strace-is-fantastic/</guid>
       <description>&lt;p&gt;From time to time, I have issues with some software that I cannot see errors in logs or when running manually, nothing happens. This is very hard to debug.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
 
 &lt;p&gt;For example, rsync sleeping forever or Libreoffice daemon quitting without raise any exception.&lt;/p&gt;
 
@@ -52,8 +53,7 @@ $ strace -o output.txt ls
 $ strace -p 1234
 &lt;/pre&gt;
 
-&lt;p&gt;Also, with &amp;lsquo;man strace&amp;rsquo; you can find all information to help you.&lt;/p&gt;
-</description>
+&lt;p&gt;Also, with &amp;lsquo;man strace&amp;rsquo; you can find all information to help you.&lt;/p&gt;</description>
     </item>
     
   </channel>

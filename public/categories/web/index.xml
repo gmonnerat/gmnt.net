@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Web on Gabriel&#39;s blog</title>
-    <link>//gmnt.net/categories/web/</link>
-    <description>Recent content in Web on Gabriel&#39;s blog</description>
+    <title>Gabriel&#39;s blog</title>
+    <link>//gmonnerat.github.io/public/categories/web/index.xml</link>
+    <description>Recent content on Gabriel&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 21 Apr 2016 05:22:55 +0200</lastBuildDate>
-    <atom:link href="//gmnt.net/categories/web/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//gmonnerat.github.io/public/categories/web/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Playing with history interface</title>
-      <link>//gmnt.net/post/playing-with-history-interface/</link>
+      <link>//gmonnerat.github.io/public/post/playing-with-history-interface/</link>
       <pubDate>Thu, 21 Apr 2016 05:22:55 +0200</pubDate>
       
-      <guid>//gmnt.net/post/playing-with-history-interface/</guid>
+      <guid>//gmonnerat.github.io/public/post/playing-with-history-interface/</guid>
       <description>&lt;p&gt;I have been playing with &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/API/History&#34;&gt;History&lt;/a&gt; recently and I commit my sample &lt;a href=&#34;https://github.com/gmonnerat/history-api-sample&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;My goal was seeing how to navigate in the website without reload the page, like with &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onhashchange&#34;&gt;onhashchange&lt;/a&gt;.&lt;/p&gt;
@@ -27,10 +26,10 @@
     
     <item>
       <title>Skeleton to my web applications in Go</title>
-      <link>//gmnt.net/post/go-web-application-skeleton/</link>
+      <link>//gmonnerat.github.io/public/post/go-web-application-skeleton/</link>
       <pubDate>Fri, 15 Apr 2016 00:38:21 +0200</pubDate>
       
-      <guid>//gmnt.net/post/go-web-application-skeleton/</guid>
+      <guid>//gmonnerat.github.io/public/post/go-web-application-skeleton/</guid>
       <description>&lt;p&gt;I just published my skeleton that I use to write Web Applications,
 &lt;a href=&#34;https://github.com/gmonnerat/go-web-application-skeleton&#34;&gt;go-web-application-skeleton&lt;/a&gt;.&lt;/p&gt;
 
@@ -65,10 +64,10 @@ there are changes, I use &lt;a href=&#34;https://github.com/pilu/fresh&#34;&gt;f
     
     <item>
       <title>Moving from Nginx to Caddy</title>
-      <link>//gmnt.net/post/moving-from-nginx-to-caddy/</link>
+      <link>//gmonnerat.github.io/public/post/moving-from-nginx-to-caddy/</link>
       <pubDate>Fri, 11 Dec 2015 00:56:07 +0100</pubDate>
       
-      <guid>//gmnt.net/post/moving-from-nginx-to-caddy/</guid>
+      <guid>//gmonnerat.github.io/public/post/moving-from-nginx-to-caddy/</guid>
       <description>&lt;p&gt;After see the release of &lt;a href=&#34;https://caddyserver.com/blog/caddy-0_8-released&#34;&gt;Caddy 0.8 with Let&amp;#39;s Encrypt integration&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;I installed Caddy downloading the package from this &lt;a href=&#34;https://caddyserver.com/download&#34;&gt;page&lt;/a&gt;.&lt;/p&gt;
@@ -110,10 +109,10 @@ there are changes, I use &lt;a href=&#34;https://github.com/pilu/fresh&#34;&gt;f
     
     <item>
       <title>Using mutt in the browser</title>
-      <link>//gmnt.net/post/gotty-simple-command-line-tool/</link>
+      <link>//gmonnerat.github.io/public/post/gotty-simple-command-line-tool/</link>
       <pubDate>Tue, 18 Aug 2015 03:55:44 +0200</pubDate>
       
-      <guid>//gmnt.net/post/gotty-simple-command-line-tool/</guid>
+      <guid>//gmonnerat.github.io/public/post/gotty-simple-command-line-tool/</guid>
       <description>&lt;p&gt;Today I saw a nice and easy to use command line tool, called &lt;a href=&#34;https://github.com/yudai/gotty&#34;&gt;GoTTY&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;I just did:&lt;/p&gt;

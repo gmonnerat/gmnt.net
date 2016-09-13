@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Books on Gabriel&#39;s blog</title>
-    <link>//gmnt.net/tags/books/</link>
-    <description>Recent content in Books on Gabriel&#39;s blog</description>
+    <title>Gabriel&#39;s blog</title>
+    <link>//gmonnerat.github.io/public/tags/books/index.xml</link>
+    <description>Recent content on Gabriel&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 06 Jun 2015 01:14:48 +0200</lastBuildDate>
-    <atom:link href="//gmnt.net/tags/books/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//gmonnerat.github.io/public/tags/books/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>One week without internet</title>
-      <link>//gmnt.net/post/one-week-without-internet/</link>
+      <link>//gmonnerat.github.io/public/post/one-week-without-internet/</link>
       <pubDate>Sat, 06 Jun 2015 01:14:48 +0200</pubDate>
       
-      <guid>//gmnt.net/post/one-week-without-internet/</guid>
+      <guid>//gmonnerat.github.io/public/post/one-week-without-internet/</guid>
       <description>&lt;p&gt;One week without internet at home and I thought that this would be impossible
 and boring, but in one week I read more than my last 3 months.&lt;/p&gt;
 
