@@ -1,4 +1,4 @@
-baseurl = "https://gmnt.net"
+baseurl = "https://www.gmnt.net"
 languageCode = "en-us"
 title = "Gabriel's blog"
 theme = "hyde-x"
