@@ -1,5 +1,5 @@
 +++
-title = "How to rename an App in Django"
+title = "How to rename an app in Django"
 date = 2017-10-15T18:42:12-02:00
 keywords = ["django"]
 description = "Well explained way to rename apps in Django"
