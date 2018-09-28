@@ -11,7 +11,7 @@ Since 3rd September, I am working full time in my projects and companies. And si
 
 First, I split my time between:
 
-[marcelamonnerat.com.br](https://marcelamonnerat.com.br/) - a bit of accounting
+[marcelamonnerat.com.br](https://www.marcelamonnerat.com.br/) - a bit of accounting
 
 [mariaaugustina.com.br](https://www.mariaaugustina.com.br/) - logistics and e-commerce
 
