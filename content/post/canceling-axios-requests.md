@@ -7,7 +7,7 @@ title = "Canceling axios requests"
 
 +++
 
-In [axios](https://github.com/axios/axios) you can cancel requests using `cancelToken`
+In [axios](https://github.com/axios/axios), you can cancel requests using `cancelToken`
 and this can be useful when you have a lot of interactions and can't control them.
 
 For example,
@@ -43,4 +43,4 @@ function updateTotalPrice(evt){
   })
 ```
 
-So, if a global `cancel`, every new request to `updateTotalPrice` will cancel the previous one, if exists.
+So, if with a global `cancel`, every new request in `updateTotalPrice` will cancel the previous one, if exists.
