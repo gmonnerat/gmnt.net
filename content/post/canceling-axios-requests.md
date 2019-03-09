@@ -1,6 +1,6 @@
 +++
 categories = ["javascript"]
-date = "2019-03-08T23:06::37+02:00"
+date = "2019-03-08T23:06:37+02:00"
 description = "You can cancel requests on axios easily"
 keywords = ["blog"]
 title = "Canceling axios requests"
